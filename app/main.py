@@ -9,7 +9,7 @@ import httpx
 import streamlit as st
 from custom_css import custom_css_str
 
-BACKEND_URL = dotenv.get_key("BACKEND_URL")
+BACKEND_URL = dotenv.get_key(dotenv.find_dotenv(), "BACKEND_URL")
 
 
 async def fetch_data(client, endpoint, params=None):
