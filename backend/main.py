@@ -376,7 +376,7 @@ async def get_visualization(
                 
                 logger.info("Starting to render plot as image")
                 buffer = io.BytesIO()
-                fig.write_image(buffer, format="png")
+                buffer.write(fig.to_image(format="png"))
                 logger.info("Finished rendering plot as image")
                 
                 buffer.seek(0)
